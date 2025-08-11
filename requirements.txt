@@ -1,0 +1,18 @@
+# Core
+streamlit>=1.31
+pandas>=2.2
+numpy>=1.26
+matplotlib>=3.8
+scipy>=1.11
+python-dotenv>=1.0
+
+# Data sources
+yfinance>=0.2.36
+alpha_vantage>=2.3.1
+requests>=2.32
+
+# Quant / stability (optional but recommended for shrinkage covariance)
+scikit-learn>=1.4
+
+# Auto-refresh helper (optional)
+streamlit-autorefresh>=0.0.3
