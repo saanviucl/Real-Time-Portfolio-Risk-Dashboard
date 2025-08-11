@@ -38,7 +38,7 @@ load_dotenv()
 st.set_page_config(page_title="Real-Time Portfolio Risk Dashboard", layout="wide")
 
 
-#     CACHING HELPERS
+#CACHING HELPERS
 
 @st.cache_data(ttl=86400, show_spinner=True)
 def load_ticker_universe() -> list[str]:
@@ -105,7 +105,7 @@ def load_prices_cached(tickers: list[str], start: date, end: date, source: str, 
 def returns_cached(prices: pd.DataFrame) -> pd.DataFrame:
     return to_returns(prices)
 
-#       SIDEBAR UI
+# SIDEBAR UI
 
 st.sidebar.title("📊 Portfolio Settings")
 default_start = date.today() - timedelta(days=365 * 2)
@@ -117,7 +117,7 @@ data_source = st.sidebar.selectbox(
 )
 refresh_seconds = st.sidebar.slider("Auto-refresh (seconds)", 0, 300, 60, help="0 disables auto-refresh")
 
-# ---- Input method: Manual vs CSV ----
+# Input method: Manual vs CSV 
 with st.sidebar.expander("Portfolio Input", True):
     input_method = st.radio("How do you want to enter positions?",
                             ["Manual entry", "Upload CSV"], horizontal=True)
@@ -280,7 +280,7 @@ else:
 # Portfolio volatility (per period)
 port_vol = float(np.sqrt(max(0.0, aligned_w.T @ cov_base.values @ aligned_w)))
 
-#       LAYOUT TABS
+# LAYOUT TABS
 
 tab_metrics, tab_visuals, tab_stress, tab_raw = st.tabs(
     ["📐 Metrics", "📈 Visuals", "🚨 Stress Tests", "🧾 Data"]
@@ -357,7 +357,7 @@ with tab_metrics:
         else:
             st.write("Benchmark data unavailable.")
 
-    # ---- Download metrics (CSV) ----
+    # Download metrics (CSV)
     metrics_df = pd.DataFrame([
         {"metric": "Parametric VaR", "value": var_p},
         {"metric": "Historical VaR", "value": var_h},
@@ -578,7 +578,7 @@ with tab_stress:
 
     st.pyplot(fig3, use_container_width=True)
 
-#        DATA TAB
+#  DATA TAB
 
 with tab_raw:
     st.subheader("Raw Data")
