@@ -57,4 +57,6 @@ GLD,3,Commodity
 
 ## Demo
 
+* Watch the demo on Youtube
+
 [![Watch the demo](https://img.youtube.com/vi/qUH16xhL33k/hqdefault.jpg)](https://youtu.be/qUH16xhL33k "Watch the demo on YouTube")
