@@ -54,3 +54,7 @@ GLD,3,Commodity
 ## Files
 
 `app.py`, `data.py`, `risk.py`, `utils.py`, `portfolio.csv`, `requirements.txt`, `.env.example`, `README.md`
+
+## Demo
+
+[![Watch the demo](https://img.youtube.com/vi/qUH16xhL33k/hqdefault.jpg)](https://youtu.be/qUH16xhL33k "Watch the demo on YouTube")
