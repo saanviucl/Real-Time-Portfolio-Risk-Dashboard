@@ -1,6 +1,6 @@
-ticker,quantity,asset_class
-AAPL,10,Equity
-MSFT,8,Equity
-TSLA,4,Equity
-TLT,5,Bond
-GLD,3,Commodity
+ticker,quantity
+AAPL,10
+MSFT,8
+TSLA,4
+TLT,5
+GLD,3
