@@ -1,14 +1,17 @@
 # Real-Time Portfolio Risk Dashboard
 
-Streamlit app for portfolio analytics: **VaR, CVaR/ES, Sharpe, Beta, CAGR**, rolling risk, drawdowns, stress tests. Data from **Yahoo Finance** (no key) or **Alpha Vantage** (optional).
+Streamlit app for live portfolio analytics: market data, VaR/ES/Sharpe/Beta, stress tests, an advisor that surfaces regime-aware ideas, a what-if simulator, and a formulas tab.
 
-## Features
+## Features 
 
-* Manual entry **or** CSV upload (+ large ticker dropdown from NASDAQ lists)
-* Metrics: Parametric & Historical **VaR**, **CVaR/ES**, **Sharpe** (rf-aware), **Beta**, **Annualized Return**, **CAGR**
-* Visuals: allocation, **contribution to risk**, **rolling vol & VaR**, **drawdowns**, risk–return scatter
-* Stress tests: vol multiplier, correlation breakdown, **uniform price shock** (+ Shock-Adjusted VaR)
-* Caching for speed; optional **Ledoit–Wolf** covariance shrinkage
+- **Input:** Manual table or CSV (`ticker,quantity`). Auto-detects asset class. Dedupes tickers.
+- **Metrics:** Parametric & Historical **VaR**, **CVaR/ES**, **Sharpe**, **Beta**, **CAGR** (1d/1wk/1mo aware).
+- **Visuals:** Allocation, Contribution to Risk, Rolling Vol & VaR, Drawdown, Risk–Return scatter.
+- **Stress tests:** Uniform price shock, volatility spike, correlation breakdown; Stressed/Adjusted VaR.
+- **Advisor:** Classifies regime (Crisis/High-Vol/Calm/Normal), scans S&P 500 top performers (1W/1M) via keyless Yahoo, scores by momentum/trend/diversification/low-vol.
+- **What-If:** Add a ticker by quantity or target weight; see deltas for VaR/ES/Sharpe/Beta/Return/Vol plus a short recommendation.
+- **Formulas:** LaTeX for methods used.
+
 
 ## Quickstart
 
@@ -26,12 +29,12 @@ streamlit run app.py
 **CSV:** Sidebar → *Upload CSV* (schema below). Duplicates are collapsed (quantities summed).
 
 ```csv
-ticker,quantity,asset_class
-AAPL,10,Equity
-MSFT,8,Equity
-TSLA,4,Equity
-TLT,5,Bond
-GLD,3,Commodity
+ticker,quantity
+AAPL,10
+MSFT,8
+TSLA,4
+TLT,5
+GLD,3
 ```
 
 ## Controls
